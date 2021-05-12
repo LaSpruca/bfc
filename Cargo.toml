@@ -1,5 +1,5 @@
 [package]
-name = "bfc"
+name = "bf-compile"
 version = "0.1.0"
 authors = ["Nathan Hare <me@laspruca.nz>"]
 edition = "2018"
@@ -9,6 +9,10 @@ include = [
     "**/*.rs",
     "Cargo.toml",
 ]
+
+[[bin]]
+name = "bfc"
+path = "src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
