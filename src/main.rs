@@ -160,7 +160,10 @@ fn main() {
     info!("Files to compile: {:?}", args.join(", "));
 
     // Location to store the intermediate rust source code
-    let intermediate = std::env::current_dir().unwrap().join("a.rs");
+    let mut intermediate = args[0].clone().replace(".bf", ".rs");
+    if !intermediate.ends_with(".rs") {
+        intermediate += ".rs";
+    }
 
     // The source code of all the compiled files
     let mut code = r#"fn main(){let mut m=[0;30000];let mut p=0usize;"#.to_string();
@@ -217,7 +220,7 @@ fn main() {
 
     let output = Command::new("rustc")
         .args(&[
-            &intermediate.to_str().unwrap(),
+            &intermediate.as_str(),
             "-C",
             "debuginfo=0",
             "-C",
