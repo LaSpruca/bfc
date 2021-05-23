@@ -16,3 +16,4 @@ path = "src/main.rs"
 [dependencies]
 log = "*"
 env_logger = "*"
+colored = "*"
