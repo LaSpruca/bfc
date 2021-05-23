@@ -1,14 +1,11 @@
 [package]
 name = "bf-compile"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Nathan Hare <me@laspruca.nz>"]
 edition = "2018"
 description = "A compiler for BrainFuck"
 license = "MIT"
-include = [
-    "**/*.rs",
-    "Cargo.toml",
-]
+include = ["**/*.rs", "Cargo.toml"]
 
 [[bin]]
 name = "bfc"
@@ -17,3 +14,5 @@ path = "src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+log = "*"
+env_logger = "*"
